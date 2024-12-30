@@ -1,0 +1,13 @@
+syntax = "proto3";
+ 
+option go_package = './proto';
+
+service LiveDocument{
+    rpc SyncDocument(stream DocumentChange) returns (stream DocumentChange) {}
+}
+
+message DocumentChange {
+    string change = 1;
+    int32 position = 2;
+    string clientId = 3; // adding new parameter and naming it 3 allows already generated code to be used
+}

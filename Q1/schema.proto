@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+service All_Services {
+  rpc initrpc(Emptyreq) returns (RegisterMoveReply) {}
+  rpc GetLabyrinthInfo(Emptyreq) returns (GetLabyrinthInfoReply) {}
+  rpc GetPlayerStatus(Emptyreq) returns (GetPlayerStatusReply) {}
+  rpc RegisterMove(RegisterMoveRequest) returns (RegisterMoveReply) {}
+  rpc Revelio(RevelioRequest) returns (RevelioReply) {}
+  rpc Bombarda(BombardaRequest) returns (BombardaReply) {}
+}
+
+message Emptyreq {
+
+}
+
+message GetLabyrinthInfoReply {
+  int32 width = 1;
+  int32 height = 2;
+}
+
+message GetPlayerStatusReply {
+  int32 player_score = 1;
+  int32 player_health = 2;
+  int32 player_x=3;
+  int32 player_y=4;
+  int32 spells=5;
+}
+
+message RegisterMoveRequest {
+  string direction = 1;
+}
+
+message RegisterMoveReply {
+  string status = 1;
+}
+
+message RevelioRequest {
+  int32 x = 1;
+  int32 y = 2;
+  string tiletype= 3;
+}
+
+message RevelioReply {
+  repeated int32 revealed_x = 1;
+  repeated int32 revealed_y = 2;
+}
+
+message BombardaRequest {
+  repeated int32 x = 1;
+  repeated int32 y = 2;
+}
+
+message BombardaReply {
+  string status = 1;
+}

@@ -1,0 +1,9 @@
+client: Client-1, change: , position: 21
+client: Client-1, change: g, position: 20
+client: Client-2, change: , position: 7
+client: Client-2, change: t, position: 6
+client: Client-2, change: h, position: 7
+client: Client-2, change: e, position: 8
+client: Client-2, change: r, position: 9
+client: Client-2, change:  , position: 10
+client: Client-2, change: , position: 11

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+service NearestNeighbor {
+   rpc GetKNearest(QueryPoint) returns (KNearestResponse) {}
+}
+
+// remember to give sequential numbers to arguements
+message Point {
+  int32 x = 1;
+  int32 y = 2;
+}
+
+message KNearestPoints{
+  Point P = 1;
+  float distance = 2;
+}
+
+message KNearestResponse {
+  repeated KNearestPoints points = 1;
+}
+
+
+// query point, number of nearest neighbor respectively
+message QueryPoint{
+  Point P = 1;
+  int32 k = 2;
+}
